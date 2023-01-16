@@ -1,2 +1,1 @@
-# vue3-temp
-vue3-temp
+# Vue 3 + Vite + vuetify 3
