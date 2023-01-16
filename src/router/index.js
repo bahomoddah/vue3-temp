@@ -18,9 +18,9 @@ const routes = [
     meta: { requiresAuth: false },
     children: [
       { path: "/dashboard", name: "Dashboard", component: Dashboard },
-      { path: "/product", name: "Products", component: Products },
-      { path: "/product/create", name: "ProductCreate", component: ProductView },
-      { path: "/product/:id", name: "ProductView", component: ProductView },
+      { path: "/products", name: "Products", component: Products },
+      { path: "/products/create", name: "ProductCreate", component: ProductView },
+      { path: "/products/:id", name: "ProductView", component: ProductView },
     ],
   },
   {

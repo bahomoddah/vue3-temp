@@ -2,14 +2,11 @@
   <div>
     <h3>Products</h3>
     <div v-if="products.length">
-      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
+      <div>
         <ProductListItem
-          v-for="(product, ind) in products"
+          v-for="(product) in products"
           :key="product.id"
           :product="product"
-          class="opacity-0 animate-fade-in-down"
-          :style="{ animationDelay: `${ind * 0.1}s` }"
-          @delete="deleteproduct(product)"
         />
       </div>
     </div>
@@ -25,13 +22,5 @@ import { computed } from "vue";
 import ProductListItem from "../components/ProductListItem.vue";
 
 const products = computed(() => store.state.products);
-
-store.dispatch("getProducts");
-
-function deleteProduct(product) {
-    store.dispatch("deleteProduct", product.id).then(() => {
-      store.dispatch("getProducts");
-    });
-}
 
 </script>

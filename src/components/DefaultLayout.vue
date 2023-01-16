@@ -2,18 +2,13 @@
 <template>
 <div>
 <h1>Main Deader</h1>
-<div class="px-2 pt-2 pb-3">
+<div>
           <router-link
             v-for="item in navigation"
             :key="item.name"
             :to="item.to"
-            active-class="bg-gray-900 text-white"
-            :class="[
-              this.$route.name === item.to.name
-                ? ''
-                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-              'block px-3 py-2 rounded-md text-base font-medium',
-            ]"
+            active-class="color"
+            class="ma-2"
             >{{ item.name }}
           </router-link>
 </div>
@@ -24,9 +19,26 @@
 </template>
 
 <script>
+import { computed } from "vue";
 const navigation = [
   { name: "Dashboard", to: { name: "Dashboard" } },
-  { name: "surveys", to: { name: "Surveys" } },
+  { name: "products", to: { name: "Products" } },
+  { name: "login", to: { name: "Login" } },
 ];
 
+export default {
+  setup() {
+    return {
+      user: computed(() => store.state.user.data),
+      navigation
+    };
+  }
+}
+
 </script>
+
+<style scoped>
+.color {
+  color: #777
+}
+</style>

@@ -1,6 +1,8 @@
 <template>
   <div>
-  {{ product.name }}
+    name : {{ product.name }} 
+    <br>
+    price : {{ product.price }}
   </div>
 </template>
 
